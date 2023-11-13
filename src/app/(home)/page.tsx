@@ -6,10 +6,11 @@ import Link from 'next/link'
 
 export default function Home() {
   return (
-    <div className="flex flex-col bg-rose-500 h-screen w-screen px-28 py-32 text-white">
-      <header className="">
+    <div className="flex flex-col items-center bg-rose-500 min-h-screen w-screen px-28 py-32 max-lg:p-10 max-md:p-5 max-md:gap-12 text-white">
+      <header className="flex max-lg:justify-center self-start">
         <Link href="/">
           <Image
+            className="max-md:w-48"
             src={fullLogoIllustration}
             alt="logotipo completo"
             width={215}
@@ -17,20 +18,21 @@ export default function Home() {
           />
         </Link>
       </header>
-      <main className="flex flex-col justify-around grow">
-        <div className="flex justify-center items-end gap-32">
-          <h1 className="text-7xl font-extrabold max-w-[30rem]">
+      <main className="flex flex-col justify-around grow lg-w-screen max-w-[105rem]">
+        <div className="flex justify-evenly items-end max-lg:items-center max-lg:gap-10 max-md:gap-8 max-lg:flex-col">
+          <h1 className="text-7xl max-lg:text-6xl max-md:text-5xl max-lg:text-center font-extrabold max-w-[30rem]">
             Leve a felicidade para o seu lar
           </h1>
           <Image
             src={animalsIllustration}
             alt="Ilustração de animais"
+            className="max-lg:w-96 max-xl:w[35rem]"
             width={592}
             height={305}
           />
         </div>
-        <div className="flex justify-between items-center">
-          <p className="text-2xl font-semibold max-w-[30rem]">
+        <div className="flex justify-between items-center max-lg:flex-col max-lg:gap-4 max-md:pt-10">
+          <p className="text-2xl font-semibold lg:max-w-[30rem] max-lg:text-center">
             Encontre o animal de estimação ideal para seu estilo de vida!
           </p>
           <AnimalFetchForm />

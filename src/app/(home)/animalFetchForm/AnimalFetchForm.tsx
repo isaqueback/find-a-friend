@@ -83,8 +83,8 @@ export default function AnimalFetchForm() {
   }, [cities])
 
   return (
-    <form className="flex gap-8 items-center">
-      <p className="mr-3">Busque um amigo:</p>
+    <form className="flex gap-8 max-md:gap-5 items-center max-md:flex-col max-md:w-screen max-md:px-5">
+      <p className="mr-3 max-md:self-start">Busque um amigo:</p>
       <div className={styles.locationLabel}>
         <Select.Root
           defaultValue={chosenState}
@@ -128,7 +128,7 @@ export default function AnimalFetchForm() {
           </Select.Content>
         </Select.Root>
       </div>
-      <button className="ml-3 bg-amber-300 rounded-3xl py-6 px-7">
+      <button className="ml-3 bg-amber-300 rounded-3xl py-6 px-7 max-md:w-full flex justify-center">
         <Image src={searchIcon} alt="Ícone de lupa" width={26} height={26} />
       </button>
     </form>
