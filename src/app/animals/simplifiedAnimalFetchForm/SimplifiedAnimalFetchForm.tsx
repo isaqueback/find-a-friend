@@ -3,7 +3,7 @@
 import Image from 'next/image'
 import searchIcon from '@/assets/searchIcon.svg'
 import { Select } from '@radix-ui/themes'
-import styles from './animalFetchForm.module.sass'
+import styles from './simplifiedAnimalFetchForm.module.sass'
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
 
@@ -29,7 +29,7 @@ interface ApiCity {
   nome: string
 }
 
-export default function AnimalFetchForm() {
+export default function SimplifiedAnimalFetchForm() {
   const [states, setStates] = useState([] as State[])
   const [chosenState, setChosenState] = useState('RO')
   const [chosenCity, setChosenCity] = useState('')

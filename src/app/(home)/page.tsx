@@ -6,7 +6,7 @@ import Link from 'next/link'
 
 export default function Home() {
   return (
-    <div className="flex flex-col items-center bg-rose-500 min-h-screen w-screen px-28 py-32 max-lg:p-10 max-md:p-5 max-md:gap-12 text-white">
+    <div className="flex flex-col items-center bg-rose-500 min-h-screen w-screen px-28 py-32 max-lg:p-10 max-md:p-5 max-md:gap-12 text-white font-nunito">
       <header className="flex max-lg:justify-center self-start">
         <Link href="/">
           <Image
@@ -32,8 +32,11 @@ export default function Home() {
           />
         </div>
         <div className="flex justify-between items-center max-lg:flex-col max-lg:gap-4 max-md:pt-10">
-          <p className="text-2xl font-semibold lg:max-w-[30rem] max-lg:text-center">
+          <p className="max-2xl:hidden text-2xl font-semibold lg:max-w-[30rem] max-lg:text-center">
             Encontre o animal de estimação ideal para seu estilo de vida!
+          </p>
+          <p className="2xl:hidden text-2xl font-semibold lg:max-w-[30rem] max-lg:text-center">
+            Encontre o seu pet ideal!
           </p>
           <AnimalFetchForm />
         </div>

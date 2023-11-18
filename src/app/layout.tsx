@@ -8,7 +8,7 @@ const nunito = Nunito({
   weight: ['200', '300', '400', '500', '600', '700', '800', '900', '1000'],
   variable: '--font-nunito',
   subsets: ['latin'],
-  display: 'swap',
+  display: 'fallback',
 })
 
 export const metadata: Metadata = {
@@ -23,7 +23,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-BR">
-      <body className={`${nunito.className}`}>
+      <body className={`${nunito.variable} font-nunito`}>
         <Theme>{children}</Theme>
       </body>
     </html>
