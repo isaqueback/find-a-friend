@@ -23,8 +23,8 @@ export default function Login() {
     })
   }
   return (
-    <div className="px-32 py-20 max-xl:p-4 flex w-screen min-h-screen font-nunito justify-center">
-      <div className="w-screen max-w-[105rem] flex gap-32">
+    <div className="px-32 py-20 max-xl:p-4 flex w-full min-h-screen font-nunito justify-center">
+      <div className="w-full max-w-[105rem] flex gap-32">
         <div className="bg-rose-500 flex flex-col items-center justify-between flex-1 pt-28 pb-10 rounded-3xl max-xl:hidden">
           <Link href="/">
             <Image
@@ -41,7 +41,7 @@ export default function Login() {
             height={195}
           />
         </div>
-        <div className="flex-1 flex flex-col justify-between max-xl:justify-center max-xl:items-center max-xl:gap-10 pt-28 max-xl:pt-0">
+        <div className="flex-1 flex flex-col justify-between max-xl:justify-center max-xl:items-center gap-7 max-xl:gap-10 pt-28 max-xl:pt-0">
           <Link
             href="/"
             className="xl:hidden bg-rose-500 rounded-3xl p-3 mb-auto"
