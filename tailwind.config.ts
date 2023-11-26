@@ -7,6 +7,9 @@ const config: Config = {
       fontFamily: {
         nunito: ['var(--font-nunito)'],
       },
+      screens: {
+        xs: '384px',
+      },
     },
   },
   plugins: [],

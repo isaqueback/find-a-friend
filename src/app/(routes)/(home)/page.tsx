@@ -18,8 +18,8 @@ export default function Home() {
           />
         </Link>
       </header>
-      <main className="flex flex-col justify-around grow lg-w-screen max-w-[105rem]">
-        <div className="flex justify-evenly items-end max-lg:items-center max-lg:gap-10 max-md:gap-8 max-lg:flex-col">
+      <main className="flex flex-col justify-around grow lg:w-full max-w-[105rem]">
+        <div className="flex justify-between 2xl:gap-x-96 items-end max-lg:items-center max-lg:gap-10 max-md:gap-8 max-lg:flex-col">
           <h1 className="text-7xl max-lg:text-6xl max-md:text-5xl max-lg:text-center font-extrabold max-w-[30rem]">
             Leve a felicidade para o seu lar
           </h1>

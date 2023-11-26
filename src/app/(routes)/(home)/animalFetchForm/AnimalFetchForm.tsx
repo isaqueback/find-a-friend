@@ -25,7 +25,7 @@ interface City {
 }
 
 interface ApiCity {
-  id: number
+  codigo_ibge: number
   nome: string
 }
 
@@ -36,34 +36,39 @@ export default function AnimalFetchForm() {
   const [cities, setCities] = useState([] as City[])
 
   async function fetchStates() {
-    const response = await fetch(
-      'https://servicodados.ibge.gov.br/api/v1/localidades/estados',
-    )
-    const fetchedStates = await response.json()
+    try {
+      const response = await fetch('https://brasilapi.com.br/api/ibge/uf/v1')
+      const fetchedStates = await response.json()
 
-    setStates(() => {
-      const formattedStates: State[] = fetchedStates.map((state: ApiState) => {
-        return { id: state.id, name: state.nome, acronym: state.sigla }
+      setStates(() => {
+        const formattedStates: State[] = fetchedStates.map(
+          (state: ApiState) => {
+            return { id: state.id, name: state.nome, acronym: state.sigla }
+          },
+        )
+
+        return formattedStates
       })
-
-      return formattedStates
-    })
+    } catch (err) {}
   }
 
-  async function fetchCities(city: string) {
-    const response = await fetch(
-      `https://servicodados.ibge.gov.br/api/v1/localidades/estados/${city}/municipios`,
-    )
+  async function fetchCities(state: string) {
+    try {
+      const response = await fetch(
+        `https://brasilapi.com.br/api/ibge/municipios/v1/${state}`,
+      )
 
-    const fetchedCities = await response.json()
+      const fetchedCities = await response.json()
+      console.log(fetchedCities)
 
-    setCities(() => {
-      const formattedCities: City[] = fetchedCities.map((city: ApiCity) => {
-        return { id: city.id, name: city.nome }
+      setCities(() => {
+        const formattedCities: City[] = fetchedCities.map((city: ApiCity) => {
+          return { id: city.codigo_ibge, name: city.nome }
+        })
+
+        return formattedCities
       })
-
-      return formattedCities
-    })
+    } catch (err) {}
   }
 
   async function handleChangedState(newState: string) {
@@ -129,8 +134,11 @@ export default function AnimalFetchForm() {
           </Select.Content>
         </Select.Root>
       </div>
-      <Link href={`/animals?state=${chosenState}&city=${chosenCity}`}>
-        <button className="ml-3 bg-amber-300 rounded-3xl py-6 px-7 max-md:w-full flex justify-center">
+      <Link
+        href={`/animals?state=${chosenState}&city=${chosenCity}`}
+        className="max-md:w-full"
+      >
+        <button className="md:ml-3 bg-amber-300 rounded-3xl max-md:w-full py-6 px-7 flex justify-center">
           <Image
             src={searchIcon}
             alt="Ícone de lupa"

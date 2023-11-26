@@ -1,0 +1,32 @@
+.locationLabel
+  display: flex
+
+  button
+    height: auto
+    background-color: transparent
+    border: 1px solid #F15156
+    border-radius: 20px
+    padding: 20px 15px
+    font-size: 1rem
+    font-weight: 800
+    color: #fff
+    outline: none
+    cursor: pointer
+
+    &.cityTrigger
+      flex: auto
+      width: 190px
+      background-color: rgb(239 68 68)
+      border: 1px solid #F15156
+      font-weight: 800
+      padding: 20px 18px
+
+      span
+        white-space: unset
+
+@media (max-width: 384px)
+  .locationLabel
+    button
+      &.cityTrigger
+        flex: 1
+        width: auto
