@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import dog1Img1Illustration from '@/assets/animalsIllustration/dog1-1.png'
 import dog2Img1Illustration from '@/assets/animalsIllustration/dog2-1.png'
 import dog3Img1Illustration from '@/assets/animalsIllustration/dog3-1.png'
@@ -11,7 +12,8 @@ import styles from './animalsContainer.module.sass'
 export default function AnimalsContainer() {
   return (
     <div className="flex flex-wrap gap-9 justify-center">
-      <div
+      <Link
+        href="/animals/1"
         className={`hover:bg-sky-900 bg-white rounded-3xl w-fit p-1 pb-5 flex flex-col items-center cursor-pointer hover:scale-[1.01] transition-all ease-out duration-500 ${styles.animalCard}`}
       >
         <Image
@@ -38,8 +40,9 @@ export default function AnimalsContainer() {
             Alfredo
           </h3>
         </div>
-      </div>
-      <div
+      </Link>
+      <Link
+        href="/animals/1"
         className={`hover:bg-sky-900 bg-white rounded-3xl w-fit p-1 pb-5 flex flex-col items-center cursor-pointer hover:scale-[1.01] transition-all ease-out duration-500 ${styles.animalCard}`}
       >
         <Image
@@ -66,8 +69,9 @@ export default function AnimalsContainer() {
             Juscelino
           </h3>
         </div>
-      </div>
-      <div
+      </Link>
+      <Link
+        href="/animals/1"
         className={`hover:bg-sky-900 bg-white rounded-3xl w-fit p-1 pb-5 flex flex-col items-center cursor-pointer hover:scale-[1.01] transition-all ease-out duration-500 ${styles.animalCard}`}
       >
         <Image
@@ -94,8 +98,9 @@ export default function AnimalsContainer() {
             Juscelino
           </h3>
         </div>
-      </div>
-      <div
+      </Link>
+      <Link
+        href="/animals/1"
         className={`hover:bg-sky-900 bg-white rounded-3xl w-fit p-1 pb-5 flex flex-col items-center cursor-pointer hover:scale-[1.01] transition-all ease-out duration-500 ${styles.animalCard}`}
       >
         <Image
@@ -122,8 +127,9 @@ export default function AnimalsContainer() {
             Juscelino
           </h3>
         </div>
-      </div>
-      <div
+      </Link>
+      <Link
+        href="/animals/1"
         className={`hover:bg-sky-900 bg-white rounded-3xl w-fit p-1 pb-5 flex flex-col items-center cursor-pointer hover:scale-[1.01] transition-all ease-out duration-500 ${styles.animalCard}`}
       >
         <Image
@@ -150,8 +156,9 @@ export default function AnimalsContainer() {
             Getúlio
           </h3>
         </div>
-      </div>
-      <div
+      </Link>
+      <Link
+        href="/animals/1"
         className={`hover:bg-sky-900 bg-white rounded-3xl w-fit p-1 pb-5 flex flex-col items-center cursor-pointer hover:scale-[1.01] transition-all ease-out duration-500 ${styles.animalCard}`}
       >
         <Image
@@ -178,7 +185,7 @@ export default function AnimalsContainer() {
             Alfredo
           </h3>
         </div>
-      </div>
+      </Link>
     </div>
   )
 }

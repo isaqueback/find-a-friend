@@ -1,8 +1,8 @@
 'use client'
 
-import AsideMenu from './asideMenu/AsideMenu'
-import AnimalTypeFilter from './animalTypeFilter/AnimalTypeFilter'
-import AnimalsContainer from './animalsContainer/AnimalsContainer'
+import AsideMenu from './components/asideMenu/AsideMenu'
+import AnimalTypeFilter from './components/animalTypeFilter/AnimalTypeFilter'
+import AnimalsContainer from './components/animalsContainer/AnimalsContainer'
 import { useEffect, useState } from 'react'
 import BurgerMenu from '@/app/components/burgerMenu/BurgerMenu'
 

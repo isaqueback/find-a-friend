@@ -1,7 +1,7 @@
 import fullLogoIllustration from '@/assets/full-logo.svg'
 import animalsIllustration from '@/assets/animals.svg'
 import Image from 'next/image'
-import AnimalFetchForm from './animalFetchForm/AnimalFetchForm'
+import AnimalFetchForm from './components/animalFetchForm/AnimalFetchForm'
 import Link from 'next/link'
 
 export default function Home() {

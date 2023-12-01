@@ -189,7 +189,7 @@ export default function Register() {
                 {...register('address')}
                 type="text"
                 id="address"
-                placeholder="Exemplo: Rua do meio, n° 2008"
+                placeholder="Exemplo: Rua do meio, 123, Três Marias, Porto Velho, Rondônia"
                 className="outline-0 bg-slate-50 rounded-xl border border-slate-300 p-5 text-sky-900 text-lg font-semibold focus:border-sky-900"
               />
               <GoogleMap cep={watch('postalCode')} address={watch('address')} />

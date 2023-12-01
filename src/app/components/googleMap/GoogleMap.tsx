@@ -4,6 +4,8 @@ import GoogleMapReact from 'google-map-react'
 interface GoogleMapProps {
   cep: string
   address: string
+  latitude?: number
+  longitude?: number
 }
 
 type Location =
@@ -45,15 +47,13 @@ export function GoogleMap({ cep, address }: GoogleMapProps) {
   }, [cep, address])
 
   return (
-    <div className="w-full h-36 border border-slate-300 rounded-xl border-dashed overflow-hidden">
-      {location ? (
+    <div className="w-full h-36 border border-slate-300 rounded-xl border-dashed overflow-hidden hover:border-sky-900 ease-out duration-300">
+      {location && (
         <GoogleMapReact
-          bootstrapURLKeys={{ key: process.env.googleApiKey }}
+          bootstrapURLKeys={{ key: process.env.googleApiKey as string }}
           defaultCenter={{ lat: location.latitude, lng: location.longitude }}
           defaultZoom={12}
         ></GoogleMapReact>
-      ) : (
-        <></>
       )}
     </div>
   )
