@@ -3,7 +3,11 @@ import Link from 'next/link'
 import partialLogo from '@/assets/partial-logo.svg'
 import leftArrowIllustration from '@/assets/left-arrow.svg'
 
-export default function SimplifiedAsideMenu() {
+interface SimplifiedAsideMenuProps {
+  url: string
+}
+
+export default function SimplifiedAsideMenu({ url }: SimplifiedAsideMenuProps) {
   return (
     <>
       <aside className="w-24 h-[51.25rem] max-h-full bg-rose-500 flex flex-col justify-between items-center py-8 fixed max-lg:hidden">
@@ -23,7 +27,7 @@ export default function SimplifiedAsideMenu() {
         </Link>
       </aside>
       <aside className="w-full h-20 bg-rose-500 flex justify-between items-center py-8 lg:hidden fixed px-10 z-10">
-        <Link href="/animals" className="p-3 bg-amber-300 rounded-2xl">
+        <Link href={url} className="p-3 bg-amber-300 rounded-2xl">
           <Image
             src={leftArrowIllustration}
             width={24}

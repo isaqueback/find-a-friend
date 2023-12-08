@@ -1,14 +1,18 @@
 import Image from 'next/image'
 import alertIllustration from '@/assets/warning.svg'
+import xSquareIllustration from '@/assets/x-square.svg'
 
 interface AnimalRequirementsProps {
   requirements: string[]
+  handleDeleteSelectedRequirement?: (index: number) => void
 }
 
-export function AnimalRequirements({ requirements }: AnimalRequirementsProps) {
+export function AnimalRequirements({
+  requirements,
+  handleDeleteSelectedRequirement,
+}: AnimalRequirementsProps) {
   return (
-    <div className="flex flex-col gap-10 pt-7 pb-5">
-      <h3 className="text-3xl font-bold">Requisitos para adoção</h3>
+    <div className="flex flex-col gap-10 pb-5">
       <ul className="flex flex-col gap-3">
         {requirements.map((requirement, idx) => {
           return (
@@ -25,6 +29,16 @@ export function AnimalRequirements({ requirements }: AnimalRequirementsProps) {
               <span className="text-rose-500 text-lg font-semibold">
                 {requirement}
               </span>
+              {handleDeleteSelectedRequirement && (
+                <Image
+                  src={xSquareIllustration}
+                  width={24}
+                  height={24}
+                  alt="Ícone de cancelar"
+                  className="ml-auto"
+                  onClick={() => handleDeleteSelectedRequirement(idx)}
+                />
+              )}
             </li>
           )
         })}

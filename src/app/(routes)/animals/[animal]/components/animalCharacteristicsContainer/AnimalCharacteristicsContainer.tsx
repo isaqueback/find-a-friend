@@ -4,7 +4,7 @@ import blueBoltIllustration from '@/assets/blue-bolt.svg'
 import maximizeIllustration from '@/assets/maximize.svg'
 
 interface AnimalCharacteristicsContainerProps {
-  animalEnergyLevel: number
+  animalEnergyLevel: 1 | 2 | 3 | 4 | 5
   animalEnvironmentSize: 'small' | 'medium' | 'big'
   animalSize: 'small' | 'medium' | 'big'
 }

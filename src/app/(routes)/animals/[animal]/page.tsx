@@ -1,5 +1,5 @@
 'use client'
-import SimplifiedAsideMenu from './components/simplifiedAsideMenu/SimplifiedAsideMenu'
+import SimplifiedAsideMenu from '../../../components/simplifiedAsideMenu/SimplifiedAsideMenu'
 import dog2Img1Illustration from '@/assets/animalsIllustration/dog2-1.png'
 import dog2Img2Illustration from '@/assets/animalsIllustration/dog2-2.jpeg'
 import dog2Img3Illustration from '@/assets/animalsIllustration/dog2-3.jpeg'
@@ -15,8 +15,8 @@ import AnimalImagesContainer from './components/animalImagesContainer/AnimalImag
 import AnimalCharacteristicsContainer from './components/animalCharacteristicsContainer/AnimalCharacteristicsContainer'
 import Link from 'next/link'
 import { GoogleMap } from '@/app/components/googleMap/GoogleMap'
-import { AnimalRequirements } from './components/animalRequirements/AnimalRequirements'
-import { HorizontalBar } from './components/horizontalBar/HorizontalBar'
+import { AnimalRequirements } from '../../../components/animalRequirements/AnimalRequirements'
+import { HorizontalBar } from '../../../components/horizontalBar/HorizontalBar'
 
 interface Animal {
   name: string
@@ -80,7 +80,7 @@ export default function Animal() {
 
   return (
     <div className="bg-rose-50 font-nunito text-sky-900">
-      <SimplifiedAsideMenu />
+      <SimplifiedAsideMenu url="/animals" />
       <main className="flex flex-col justify-center items-center gap-10 py-10">
         <h4 className="text-slate-400 text-lg font-semibold">Seu novo amigo</h4>
         <div className="w-[44rem] max-w-full rounded-3xl bg-white flex flex-col items-center gap-8">
@@ -129,6 +129,9 @@ export default function Animal() {
               </div>
             </div>
             <HorizontalBar />
+            <h3 className="text-3xl font-bold mb-3 mt-6">
+              Requisitos para adoção
+            </h3>
             <AnimalRequirements requirements={owner.animal.requirements} />
             <HorizontalBar />
             <Link
