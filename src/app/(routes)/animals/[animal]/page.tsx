@@ -43,7 +43,7 @@ interface Owner {
 }
 
 export default function Animal() {
-  const [owner, setOwner] = useState<Owner>({
+  const [owner] = useState<Owner>({
     name: 'Seu Cãopanheiro',
     cellNumber: '+55 (69) 9272-4862',
     location: {

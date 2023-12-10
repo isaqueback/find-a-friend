@@ -60,7 +60,7 @@ export default function Register() {
 
   const [selectedImgs, setSelectedImgs] = useState([] as File[])
   const [newRequirement, setNewRequirement] = useState('')
-  const [owner, setOwner] = useState({
+  const [owner] = useState({
     name: 'Seu Cãopanheiro',
     location: {
       address: 'Rua do meio, 123, Boa Viagem, Recife - PE',
