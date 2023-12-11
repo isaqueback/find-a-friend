@@ -5,6 +5,7 @@ import SimplifiedAnimalFetchForm from '../simplifiedAnimalFetchForm/SimplifiedAn
 import styles from './asideMenu.module.sass'
 import FiltersForm from '../filtersForm/FiltersForm'
 import BurgerMenu from '@/app/components/burgerMenu/BurgerMenu'
+import { useState } from 'react'
 
 interface AsideMenuProps {
   viewWidth: number
@@ -17,6 +18,12 @@ export default function AsideMenu({
   isAsideOpen,
   handleToggleAsideMenu,
 }: AsideMenuProps) {
+  const [animalAge, setAnimalAge] = useState('adult')
+  const [animalEnergyLevel, setAnimalEnergyLevel] = useState('3')
+  const [animalSize, setAnimalSize] = useState('medium')
+  const [animalIndependencyLevel, setAnimalIndependencyLevel] =
+    useState('medium')
+
   return (
     <aside
       className={`bg-red-500 w-96 max-w-full pt-20 max-sm:pt-10 flex flex-col gap-9 fixed overflow-hidden h-screen overflow-y-scroll max-lg:z-10 transition-transform duration-300 ease-out ${
@@ -38,9 +45,19 @@ export default function AsideMenu({
             handleToggleAsideMenu={handleToggleAsideMenu}
           />
         </div>
-        <SimplifiedAnimalFetchForm />
+        <SimplifiedAnimalFetchForm
+          animalAge={animalAge}
+          animalEnergyLevel={animalEnergyLevel}
+          animalIndependencyLevel={animalIndependencyLevel}
+          animalSize={animalSize}
+        />
       </header>
-      <FiltersForm />
+      <FiltersForm
+        setAnimalAge={setAnimalAge}
+        setAnimalEnergyLevel={setAnimalEnergyLevel}
+        setAnimalIndependencyLevel={setAnimalIndependencyLevel}
+        setAnimalSize={setAnimalSize}
+      />
     </aside>
   )
 }

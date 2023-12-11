@@ -59,7 +59,6 @@ export default function AnimalFetchForm() {
       )
 
       const fetchedCities = await response.json()
-      console.log(fetchedCities)
 
       setCities(() => {
         const formattedCities: City[] = fetchedCities.map((city: ApiCity) => {
@@ -135,7 +134,7 @@ export default function AnimalFetchForm() {
         </Select.Root>
       </div>
       <Link
-        href={`/animals?state=${chosenState}&city=${chosenCity}`}
+        href={`/animals?state=${chosenState}&city=${chosenCity}&animalAge=adult&animalEnergyLevel=3animalIndependencyLevel=medium&animalSize=size`}
         className="max-md:w-full"
       >
         <button className="md:ml-3 bg-amber-300 rounded-3xl max-md:w-full py-6 px-7 flex justify-center">
